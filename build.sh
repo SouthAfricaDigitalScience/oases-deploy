@@ -36,7 +36,11 @@ elif [ -e ${SRC_DIR}/${SOURCE_FILE}.lock ] ; then
 else
   echo "continuing from previous builds, using source at " ${SRC_DIR}/${SOURCE_FILE}
 fi
-tar xzf  ${SRC_DIR}/${SOURCE_FILE} -C ${WORKSPACE} --skip-old-files
-cp Makefile ${WORKSPACE}/${NAME}_${VERSION}
-cd ${WORKSPACE}/${NAME}_${VERSION}/
+
+# The version in the name of the tarball the directory which it contains differ : 0.2.08 vs 0.2.8
+# We therefore need to create the directory by hand and use the strip-components trick.
+mkdir -p ${WORKSPACE}/${NAME}-${VERSION}
+tar xzf  ${SRC_DIR}/${SOURCE_FILE} -C ${WORKSPACE} --skip-old-files --strip-components=1
+cp Makefile ${WORKSPACE}/${NAME}-${VERSION}
+cd ${WORKSPACE}/${NAME}-${VERSION}/
 make

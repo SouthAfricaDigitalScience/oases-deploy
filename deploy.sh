@@ -3,7 +3,7 @@
 . /etc/profile.d/modules.sh
 module add deploy
 module add velvet
-cd ${WORKSPACE}/${NAME}_${VERSION}/
+cd ${WORKSPACE}/${NAME}-${VERSION}/
 echo "All tests have passed, will now build into ${SOFT_DIR}"
 make clean
 make

@@ -3,7 +3,7 @@
 . /etc/profile.d/modules.sh
 module add ci
 module add velvet
-cd ${WORKSPACE}/${NAME}_${VERSION}/
+cd ${WORKSPACE}/${NAME}-${VERSION}/
 
 cp -rvf oases ${SOFT_DIR}
 cp -rvf scripts src obj OasesManual.pdf ${SOFT_DIR}
