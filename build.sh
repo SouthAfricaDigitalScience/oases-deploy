@@ -38,5 +38,5 @@ else
 fi
 tar xzf  ${SRC_DIR}/${SOURCE_FILE} -C ${WORKSPACE} --skip-old-files
 cp Makefile ${WORKSPACE}/${NAME}_${VERSION}
-cd ${WORKSPACE}/${NAME}-${VERSION}/
+cd ${WORKSPACE}/${NAME}_${VERSION}/
 make
