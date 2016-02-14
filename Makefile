@@ -3,7 +3,7 @@
 CC = gcc
 CFLAGS = -Wall
 DEBUG = -g
-LIBS = -lm
+LIBS = -L$(ZLIB_DIR) -lm
 OPT = -O3
 export MAXKMERLENGTH = 64
 export CATEGORIES = 2
@@ -50,7 +50,7 @@ default : cleanobj oases doc
 # zlib:
 # clean-zlib:
 # endif
-Z_LIB_FILES = -L$(ZLIB_DIR) -lz
+Z_LIB_FILES = -lz
 VELVET_SRC_DIR=$(VELVET_DIR)/src
 VELVET_OBJ = recycleBin utility graph passageMarker readSet tightString kmer dfibHeap dfib concatenatedGraph graphStats fibHeap fib readCoherentGraph allocArray binarySequences autoOpen
 VELVET_FILES = $(VELVET_OBJ:%=$(VELVET_DIR)/obj/%.o)
