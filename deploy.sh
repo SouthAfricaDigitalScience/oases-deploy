@@ -4,6 +4,7 @@
 module add deploy
 module add zlib
 module add velvet
+mkdir -p ${SOFT_DIR}
 cd ${WORKSPACE}/${NAME}-${VERSION}/
 echo "All tests have passed, will now build into ${SOFT_DIR}"
 make clean
