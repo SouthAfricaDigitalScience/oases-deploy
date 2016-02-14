@@ -50,7 +50,7 @@ default : cleanobj oases doc
 # zlib:
 # clean-zlib:
 # endif
-
+Z_LIB_FILES = -L$(ZLIB_DIR) -lz
 VELVET_SRC_DIR=$(VELVET_DIR)/src
 VELVET_OBJ = recycleBin utility graph passageMarker readSet tightString kmer dfibHeap dfib concatenatedGraph graphStats fibHeap fib readCoherentGraph allocArray binarySequences autoOpen
 VELVET_FILES = $(VELVET_OBJ:%=$(VELVET_DIR)/obj/%.o)
@@ -84,8 +84,11 @@ doc: OasesManual.pdf
 OasesManual.pdf: doc/manual/OasesManual.tex
 	cd doc; make
 
+# oases : obj $(OBJ)
+# 	$(CC) $(CFLAGS) $(OPT) $(LDFLAGS) -o oases $(OBJ) # $(VELVET_FILES) $(Z_LIB_FILES) $(LIBS)
 oases : obj $(OBJ)
-	$(CC) $(CFLAGS) $(OPT) $(LDFLAGS) -o oases $(OBJ) # $(VELVET_FILES) $(Z_LIB_FILES) $(LIBS)
+	$(CC) $(CFLAGS) $(OPT) $(LDFLAGS) -o oases $(OBJ) $(VELVET_FILES) $(Z_LIB_FILES) $(LIBS)
+
 
 
 # debug : cleanobj velvetdbg obj/dbg $(OBJDBG)
