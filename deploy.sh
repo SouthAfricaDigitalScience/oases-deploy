@@ -11,7 +11,7 @@ make clean
 make
 echo "Buld has passed, now copying to install directory"
 cp -rvf oases ${SOFT_DIR}
-cp -rvf scripts src obj OasesManual.pdf ${SOFT_DIR}
+cp -rvf scripts src obj ${SOFT_DIR}
 
 echo "Creating the modules file directory ${LIBRARIES_MODULES}"
 mkdir -p ${BIOINFORMATICS_MODULES}/${NAME}

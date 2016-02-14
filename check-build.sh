@@ -7,7 +7,7 @@ module add velvet
 cd ${WORKSPACE}/${NAME}-${VERSION}/
 mkdir -p ${SOFT_DIR}
 cp -rvf oases ${SOFT_DIR}
-cp -rvf scripts src obj OasesManual.pdf ${SOFT_DIR}
+cp -rvf scripts src obj ${SOFT_DIR}
 
 mkdir -p modules
 (
