@@ -40,7 +40,7 @@ fi
 # The version in the name of the tarball the directory which it contains differ : 0.2.08 vs 0.2.8
 # We therefore need to create the directory by hand and use the strip-components trick.
 mkdir -p ${WORKSPACE}/${NAME}-${VERSION}
-tar xzf  ${SRC_DIR}/${SOURCE_FILE} -C ${WORKSPACE} --skip-old-files --strip-components=1
+tar xzf  ${SRC_DIR}/${SOURCE_FILE} -C ${WORKSPACE}/${NAME}-${VERSION} --skip-old-files --strip-components=1
 cp Makefile ${WORKSPACE}/${NAME}-${VERSION}
 cd ${WORKSPACE}/${NAME}-${VERSION}/
 make
