@@ -74,7 +74,7 @@ OBJDBG = $(subst obj,obj/dbg,$(OBJ))
 clean :
 	rm -f obj/*.o obj/dbg/*.o ./oases
 	# cd $(VELVET_DIR) && make clean
-	cd doc && make clean
+	# cd doc && make clean
 
 cleanobj:
 	rm -f obj/*.o obj/dbg/*.o
