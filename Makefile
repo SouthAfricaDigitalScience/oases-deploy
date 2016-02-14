@@ -32,7 +32,7 @@ ifdef SINGLE_COV_CAT
 override DEF := $(DEF) -D SINGLE_COV_CAT
 endif
 
-default : cleanobj oases doc
+default : cleanobj oases
 
 # ifdef BUNDLEDZLIB
 # Z_LIB_DIR=$(VELVET_DIR)/third-party/zlib-1.2.3
