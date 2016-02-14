@@ -33,4 +33,4 @@ prepend-path PATH                $::env(OASES_DIR)/scripts
 # Add CFLAGS if you want to compile against the headers
 prepend-path CFLAGS              $::env(OASES_DIR)/src
 MODULE_FILE
-) > ${LIBRARIES_MODULES}/${NAME}/${VERSION}
+) > ${BIOINFORMATICS_MODULES}/${NAME}/${VERSION}
