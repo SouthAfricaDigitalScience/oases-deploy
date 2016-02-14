@@ -2,6 +2,7 @@
 # Check build file for OASES
 . /etc/profile.d/modules.sh
 module add ci
+module add zlib
 module add velvet
 cd ${WORKSPACE}/${NAME}-${VERSION}/
 

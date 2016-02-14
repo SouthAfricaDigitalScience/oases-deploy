@@ -2,6 +2,7 @@
 # Deploy script for OASES
 . /etc/profile.d/modules.sh
 module add deploy
+module add zlib
 module add velvet
 cd ${WORKSPACE}/${NAME}-${VERSION}/
 echo "All tests have passed, will now build into ${SOFT_DIR}"

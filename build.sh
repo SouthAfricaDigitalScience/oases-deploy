@@ -3,6 +3,7 @@
 . /etc/profile.d/modules.sh
 
 module add ci
+module add zlib
 module add velvet
 
 SOURCE_FILE=${NAME}_${VERSION}.tgz
@@ -43,4 +44,6 @@ mkdir -p ${WORKSPACE}/${NAME}-${VERSION}
 tar xzf  ${SRC_DIR}/${SOURCE_FILE} -C ${WORKSPACE}/${NAME}-${VERSION} --skip-old-files --strip-components=1
 cp Makefile ${WORKSPACE}/${NAME}-${VERSION}
 cd ${WORKSPACE}/${NAME}-${VERSION}/
+
+
 make
