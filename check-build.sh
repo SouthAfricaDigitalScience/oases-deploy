@@ -22,7 +22,7 @@ proc ModulesHelp { } {
 
 module-whatis   "$NAME $VERSION."
 setenv       OASES_VERSION       $VERSION
-setenv       OASES_DIR           /apprepo/$::env(SITE)/$::env(OS)/$::env(ARCH)/$NAME/$VERSION
+setenv       OASES_DIR           /data/ci-build/$::env(SITE)/$::env(OS)/$::env(ARCH)/$NAME/$VERSION
 prepend-path PATH                $::env(OASES_DIR)/
 prepend-path PATH                $::env(OASES_DIR)/scripts
 # Add CFLAGS if you want to compile against the headers
@@ -30,5 +30,5 @@ prepend-path CFLAGS              $::env(OASES_DIR)/src
 MODULE_FILE
 ) > modules/$VERSION
 
-mkdir -p ${BIOINFORMATICS_MODULES}/${NAME}
-cp modules/$VERSION ${BIOINFORMATICS_MODULES}/${NAME}
+mkdir -p ${BIOINFORMATICS}/${NAME}
+cp modules/$VERSION ${BIOINFORMATICS}/${NAME}

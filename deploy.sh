@@ -13,8 +13,8 @@ echo "Buld has passed, now copying to install directory"
 cp -rvf oases ${SOFT_DIR}
 cp -rvf scripts src obj ${SOFT_DIR}
 
-echo "Creating the modules file directory ${LIBRARIES_MODULES}"
-mkdir -p ${BIOINFORMATICS_MODULES}/${NAME}
+echo "Creating the modules file directory ${BIOINFORMATICS}"
+mkdir -p ${BIOINFORMATICS}/${NAME}
 (
 cat <<MODULE_FILE
 #%Module1.0
@@ -33,4 +33,4 @@ prepend-path PATH                $::env(OASES_DIR)/scripts
 # Add CFLAGS if you want to compile against the headers
 prepend-path CFLAGS              $::env(OASES_DIR)/src
 MODULE_FILE
-) > ${BIOINFORMATICS_MODULES}/${NAME}/${VERSION}
+) > ${BIOINFORMATICS}/${NAME}/${VERSION}
